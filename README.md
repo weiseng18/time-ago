@@ -2,20 +2,22 @@
 
 Utility to present time ago into a human-readable format.
 
-## Sample Output
+## Usage
 
 ```js
+ago = require("@weiseng18/time-ago")
+
 // absolute time
-fromToday(1) // 52 years ago
+ago.fromToday(1) // 52 years ago
 
 // dynamic time (in the past)
-fromToday(new Date() - 7 * 24 * 60 * 60 * 1000) // 7 days ago
-fromToday(new Date() - 10 * 1000) // 10 seconds ago
-fromToday(new Date()) // just now
+ago.fromToday(new Date() - 7 * 24 * 60 * 60 * 1000) // 7 days ago
+ago.fromToday(new Date() - 10 * 1000) // 10 seconds ago
+ago.fromToday(new Date()) // just now
 
 // dynamic time (in the future)
 // The util does NOT support future dates currently
-fromToday(new Date() + 7 * 24 * 60 * 60 * 1000) // just now
+ago.fromToday(new Date() + 7 * 24 * 60 * 60 * 1000) // just now
 ```
 
 ## Worked Example
