@@ -1,0 +1,9 @@
+{
+  "name": "time-ago",
+  "version": "0.1.0",
+  "description": "time ago in human readable format",
+  "homepage": "https://github.com/weiseng18/time-ago",
+  "main": "index.js",
+  "author": "",
+  "license": "MIT"
+}
