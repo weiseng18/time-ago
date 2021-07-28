@@ -36,3 +36,7 @@ const fromToday = (initialTime) => {
 
   return "just now"
 }
+
+module.exports = {
+  fromToday: fromToday,
+}
