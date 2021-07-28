@@ -1,6 +1,6 @@
 {
   "name": "@weiseng18/time-ago",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "time ago in human readable format",
   "homepage": "https://github.com/weiseng18/time-ago",
   "main": "index.js",
