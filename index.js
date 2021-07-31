@@ -4,7 +4,7 @@
  */
 
 const fromToday = (initialTime) => {
-  const timePassed = new Date() - initialTime
+  const timeDiff = new Date() - initialTime
 
   // amount of milliseconds in each time period
   const units = {
@@ -25,13 +25,13 @@ const fromToday = (initialTime) => {
 
   for (const unit in units) {
     const numMs = units[unit]
-    if (timePassed > numMs)
-      return rtf.format(-Math.round(timePassed / numMs), unit)
+    if (timeDiff > numMs)
+      return rtf.format(-Math.round(timeDiff / numMs), unit)
   }
 
   /**
    * rtf smallest unit is second
-   * so if this function has not returned, it means that timePassed < 1 second
+   * so if this function has not returned, it means that timeDiff < 1 second
    */
 
   return "just now"
