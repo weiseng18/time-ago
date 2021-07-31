@@ -16,8 +16,12 @@ ago.fromToday(new Date() - 10 * 1000) // 10 seconds ago
 ago.fromToday(new Date()) // just now
 
 // dynamic time (in the future)
-// The util does NOT support future dates currently
-ago.fromToday(new Date() + 7 * 24 * 60 * 60 * 1000) // just now
+//
+// interestingly, new Date() - 1000 will cast the new Date() to an integer
+// however, new Date() + 1000 interprets appending "1000" to the date
+// as such, need to do new Date().valueOf() instead
+ago.fromToday(new Date().valueOf() + 10 * 1000) // in 10 seconds
+ago.fromToday(new Date().valueOf() - 7 * 24 * 60 * 60 * 1000) // in 7 days
 ```
 
 ## Worked Example
