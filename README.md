@@ -1,6 +1,9 @@
 # time-ago
 
-Utility to present time ago into a human-readable format.
+Utility to present in a human-readable format:
+
+- time ago
+- time in the future
 
 ## Usage
 
@@ -20,6 +23,7 @@ ago.fromToday(new Date()) // just now
 // interestingly, new Date() - 1000 will cast the new Date() to an integer
 // however, new Date() + 1000 interprets appending "1000" to the date
 // as such, need to do new Date().valueOf() instead
+ago.fromToday(new Date().valueOf() + 1) // just now
 ago.fromToday(new Date().valueOf() + 10 * 1000) // in 10 seconds
 ago.fromToday(new Date().valueOf() - 7 * 24 * 60 * 60 * 1000) // in 7 days
 ```
@@ -53,5 +57,4 @@ The util then returns `"2 months ago"`.
 
 ## Caveats
 
-- The util uses `Intl.RelativeTimeFormat`, which only supports up to a smallest unit of seconds. For a time less than 1 second ago, the util returns `'just now'`.
-- The util does not support future dates currently. For any date in the future, the util returns `'just now'`.
+- The util uses `Intl.RelativeTimeFormat`, which only supports up to a smallest unit of seconds. For an absolute time less than 1 second ago, the util returns `'just now'`.
