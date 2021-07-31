@@ -4,7 +4,15 @@
  */
 
 const fromToday = (initialTime) => {
-  const timeDiff = new Date() - initialTime
+  let timeDiff, isAfter = false
+  let now = new Date()
+
+  if (now > initialTime) {
+    timeDiff = now - initialTime
+  } else {
+    timeDiff = initialTime - now
+    isAfter = true
+  }
 
   // amount of milliseconds in each time period
   const units = {
@@ -25,8 +33,10 @@ const fromToday = (initialTime) => {
 
   for (const unit in units) {
     const numMs = units[unit]
-    if (timeDiff > numMs)
-      return rtf.format(-Math.round(timeDiff / numMs), unit)
+    if (timeDiff > numMs) {
+      const value = Math.round(timeDiff / numMs)
+      return rtf.format(isAfter ? value : -value, unit)
+    }
   }
 
   /**
